@@ -12,6 +12,25 @@
 
 Your checkpoint is really a terminal app; which is what you'll be graded on. However, you should push to use the DOM and create a GUI for this game.
 
+## Code Plan: 
+3 stacks named a b c 
+4 pieces 4 3 2 1
+Game starts w/ 4 3 2 1 in stack a
+
+1. Choose top piece in the start stack (a b c)
+2. Choose the stack to move the piece to 
+    1. Will choose the last value in the array (.pop())
+    2. Move it to the end of target array 
+3. Check if valid move:
+    1. Is the stack empty? Ok
+    2. If not, is the piece smaller than the one there? Ok
+    3. Am I trying to move to the same stack?
+4. Move the piece:
+    1. Remove the piece from starting stack
+    2. Add piece to the ending stack 
+5. Check for win: all the pieces are on stack C in large to small order
+
+
 ## Checklist
 
 <!-- This is for their personal navigation through the project. They can go through and make sure they get each thing and can comb over it later.  -->
