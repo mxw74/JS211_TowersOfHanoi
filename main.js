@@ -35,23 +35,26 @@ const movePiece = (startStack, endStack) => {
   //I need it to select the last variable in each stack (pop())
   //It needs to .push() this variable into another selected stack
 
+  stacks[startStack].push(stacks[endStack].pop())
+  stacks[startStack].push(stacks[endStack].pop()) 
+
   //maybe an if statement (if startStack = "string" {pop()})
   // startStack = "";
-  if (startStack ==a) {
-    startStack = console.log(stacks.a.pop());
-  } else if (startStack ==b) {
-    startStack = console.log(stacks.b.pop());
-  } else if (startStack == c) {
-    startStack = console.log(stacks.c.pop());
-  }
-  // endStack = "";
-  if (endStack == a) {
-    endStack = console.log(stacks.a.push(startStack));
-  } else if (endStack == b) {
-    endStack = console.log(stacks.b.push(startStack));
-  } else if (endStack == c) {
-    endStack = console.log(stacks.c.push(startStack));
-  }
+  // if (startStack ==a) {
+  //   startStack = console.log(stacks.a.pop());
+  // } else if (startStack ==b) {
+  //   startStack = console.log(stacks.b.pop());
+  // } else if (startStack == c) {
+  //   startStack = console.log(stacks.c.pop());
+  // }
+  // // endStack = "";
+  // if (endStack == a) {
+  //   endStack = console.log(stacks.a.push(startStack));
+  // } else if (endStack == b) {
+  //   endStack = console.log(stacks.b.push(startStack));
+  // } else if (endStack == c) {
+  //   endStack = console.log(stacks.c.push(startStack));
+  // }
   // startStack = console.log(stacks.pop())
   // yourMove = () => {
   //   removedItem = console.log(stacks.a.pop()); //selects the last item in array a
