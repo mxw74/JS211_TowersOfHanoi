@@ -29,14 +29,16 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 };
 
+
 // Next, what do you think this function should do?
 const movePiece = (startStack, endStack) => {
   // Your code here
   //I need it to select the last variable in each stack (pop())
   //It needs to .push() this variable into another selected stack
-
-  stacks[startStack].push(stacks[endStack].pop())
-  stacks[startStack].push(stacks[endStack].pop()) 
+  // startStack=console.log(stacks[startStack])
+  // endStack=console.log(stacks[endStack])
+  console.log(stacks[startStack].push(stacks[endStack].pop()))
+  // console.log(startStack.push(endStack.pop()))
 
   //maybe an if statement (if startStack = "string" {pop()})
   // startStack = "";
@@ -78,11 +80,11 @@ const isLegal = (checkArray, lastInteger, removedItem) => {
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
-  // if ((stacks.c = [4, 3, 2, 1])) {
-  //   console.log("You Won");
-  // } else {
-  //   return false;
-  // }
+  if ((stacks.c = [4, 3, 2, 1])) {
+    console.log("You Won");
+  } else {
+    return false;
+  }
   //does the c array = 4 3 2 1 return a console log message if not return false
   //start a new game
 };
@@ -90,9 +92,10 @@ const checkForWin = () => {
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
-  //  firstMove = startStack;
-  //  secondMove = endStack;
-  movePiece();
+   let firstMove = startStack;
+   let secondMove = endStack;
+  movePiece(startStack, endStack);
+  checkForWin()
   // if (!isLegal(startStack, endStack)) {
   //   //console log an error message
   // } else {
