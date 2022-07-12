@@ -37,7 +37,10 @@ const movePiece = (startStack, endStack) => {
   //It needs to .push() this variable into another selected stack
   // startStack=console.log(stacks[startStack])
   // endStack=console.log(stacks[endStack])
-  console.log(stacks[startStack].push(stacks[endStack].pop()))
+  let takePiece = stacks[startStack].pop()
+  stacks[endStack].push(takePiece)
+  // console.log(takePiece)
+  // console.log(endStack)
   // console.log(startStack.push(endStack.pop()))
 
   //maybe an if statement (if startStack = "string" {pop()})
@@ -70,6 +73,7 @@ const isLegal = (checkArray, lastInteger, removedItem) => {
   // Your code here
   // const checkArray = console.log(stacks.a.length) | console.log(stacks.b.length) |
   // console.log(stacks.c.length)
+  // if (startStack)
   // if (checkArray < 4, lastInteger > removedItem) {
   //   move the block to the selected array
   // } else {
@@ -80,7 +84,7 @@ const isLegal = (checkArray, lastInteger, removedItem) => {
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
-  if ((stacks.c = [4, 3, 2, 1])) {
+  if ((stacks.c == [4, 3, 2, 1])) {
     console.log("You Won");
   } else {
     return false;
@@ -94,7 +98,7 @@ const towersOfHanoi = (startStack, endStack) => {
   // Your code here
    let firstMove = startStack;
    let secondMove = endStack;
-  movePiece(startStack, endStack);
+  movePiece(firstMove, secondMove);
   checkForWin()
   // if (!isLegal(startStack, endStack)) {
   //   //console log an error message
