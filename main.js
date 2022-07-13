@@ -29,7 +29,6 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 };
 
-
 // Next, what do you think this function should do?
 const movePiece = (startStack, endStack) => {
   // Your code here
@@ -37,8 +36,11 @@ const movePiece = (startStack, endStack) => {
   //It needs to .push() this variable into another selected stack
   // startStack=console.log(stacks[startStack])
   // endStack=console.log(stacks[endStack])
-  let takePiece = stacks[startStack].pop()
-  stacks[endStack].push(takePiece)
+
+  // let lastItem = stacks[startStack].pop();
+  stacks[endStack].push(stacks[startStack].pop());
+
+  // endStack
   // console.log(takePiece)
   // console.log(endStack)
   // console.log(startStack.push(endStack.pop()))
@@ -68,9 +70,21 @@ const movePiece = (startStack, endStack) => {
 };
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
-const isLegal = (checkArray, lastInteger, removedItem) => {
+const isLegal = (startStack, endStack) => {
   //startStack, endStack as parameters
   // Your code here
+
+  if (
+    stacks[endStack][stacks[endStack].length - 1] <
+      stacks[startStack][stacks[startStack].length - 1] ||
+    stacks[startStack] == [] ||
+    stacks[endStack].length >= 4
+  ) {
+    return console.log("cannot make this move");
+  } else {
+    movePiece(startStack, endStack);
+  }
+
   // const checkArray = console.log(stacks.a.length) | console.log(stacks.b.length) |
   // console.log(stacks.c.length)
   // if (startStack)
@@ -84,7 +98,7 @@ const isLegal = (checkArray, lastInteger, removedItem) => {
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
-  if ((stacks.c == [4, 3, 2, 1])) {
+  if (stacks.c == [4, 3, 2, 1]) {
     console.log("You Won");
   } else {
     return false;
@@ -96,10 +110,17 @@ const checkForWin = () => {
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
-   let firstMove = startStack;
-   let secondMove = endStack;
-  movePiece(firstMove, secondMove);
-  checkForWin()
+  //  let firstMove = startStack;
+  //  let secondMove = endStack;
+
+  isLegal(startStack, endStack)
+
+  // if (isLegal(startStack, endStack)) {
+  //   movePiece(startStack, endStack);
+  // }
+  // movePiece(firstMove, secondMove);
+  // movePiece(startStack, endStack)
+  // checkForWin()
   // if (!isLegal(startStack, endStack)) {
   //   //console log an error message
   // } else {
