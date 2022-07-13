@@ -38,38 +38,14 @@ const movePiece = (startStack, endStack) => {
   // endStack=console.log(stacks[endStack])
 
   // let lastItem = stacks[startStack].pop();
-  stacks[endStack].push(stacks[startStack].pop());
+  stacks[endStack].push(stacks[startStack].pop()); //Allows the letter we input for end stack to take in the last object in the start stack array
 
-  // endStack
-  // console.log(takePiece)
-  // console.log(endStack)
-  // console.log(startStack.push(endStack.pop()))
-
-  //maybe an if statement (if startStack = "string" {pop()})
-  // startStack = "";
-  // if (startStack ==a) {
-  //   startStack = console.log(stacks.a.pop());
-  // } else if (startStack ==b) {
-  //   startStack = console.log(stacks.b.pop());
-  // } else if (startStack == c) {
-  //   startStack = console.log(stacks.c.pop());
-  // }
-  // // endStack = "";
-  // if (endStack == a) {
-  //   endStack = console.log(stacks.a.push(startStack));
-  // } else if (endStack == b) {
-  //   endStack = console.log(stacks.b.push(startStack));
-  // } else if (endStack == c) {
-  //   endStack = console.log(stacks.c.push(startStack));
-  // }
-  // startStack = console.log(stacks.pop())
-  // yourMove = () => {
-  //   removedItem = console.log(stacks.a.pop()); //selects the last item in array a
-  //   console.log(stacks.b.push(removedItem)); //adds removed item back to new array
-  // }
+ 
 };
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
+//Checks the moves by checking the last item in each array using bracket notation to identify the arrays within the stacks
+//The .length - 1 allows us to identify the index we want to select since indexes start with 0
 const isLegal = (startStack, endStack) => {
   //startStack, endStack as parameters
   // Your code here
