@@ -80,58 +80,42 @@ const isLegal = (startStack, endStack) => {
     stacks[startStack] == [] ||
     stacks[endStack].length >= 4
   ) {
-    return false
+    return false;
     // console.log("cannot make this move");
   } else {
-    return true
+    return true;
     // movePiece(startStack, endStack);
   }
 
-  // const checkArray = console.log(stacks.a.length) | console.log(stacks.b.length) |
-  // console.log(stacks.c.length)
-  // if (startStack)
-  // if (checkArray < 4, lastInteger > removedItem) {
-  //   move the block to the selected array
-  // } else {
-  //   return "cannot make this move"
-  // }
 };
 
+
 // What is a win in Towers of Hanoi? When should this function run?
+//This function runs after each time I move a piece legally
 const checkForWin = () => {
   // Your code here
-  if (stacks.c == [4, 3, 2, 1]) {
+  if (stacks.b.length == 4) {
+    //if isLegal is setup right then it should not be able to achieve a length of 4
     return true;
   } else {
     return false;
   }
-  //does the c array = 4 3 2 1 return a console log message if not return false
   //start a new game
 };
 
-// When is this function called? What should it do with its argument?
+//When this function is called I want to check if the move is legal, allow them to move a piece, then check for a win
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
-  //  let firstMove = startStack;
-  //  let secondMove = endStack;
-
-  isLegal(startStack, endStack)
 
   if (isLegal(startStack, endStack)) {
+    // if it is legal then I want you to move the piece
     movePiece(startStack, endStack);
   } else {
-    return "cannot make this move"
+    // if not legal then I want them to prompted they cannot do that
+    return "cannot make this move";
   }
-  checkForWin(startStack, endStack)
-  // movePiece(firstMove, secondMove);
-  // movePiece(startStack, endStack)
-  // checkForWin()
-  // if (!isLegal(startStack, endStack)) {
-  //   //console log an error message
-  // } else {
-  //   movePiece(startStack, endStack);
-  // }
-  // checkForWin();
+
+  checkForWin(); // each move I want them to check for a win
 };
 
 const getPrompt = () => {
