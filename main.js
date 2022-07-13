@@ -80,9 +80,11 @@ const isLegal = (startStack, endStack) => {
     stacks[startStack] == [] ||
     stacks[endStack].length >= 4
   ) {
-    return console.log("cannot make this move");
+    return false
+    // console.log("cannot make this move");
   } else {
-    movePiece(startStack, endStack);
+    return true
+    // movePiece(startStack, endStack);
   }
 
   // const checkArray = console.log(stacks.a.length) | console.log(stacks.b.length) |
@@ -99,7 +101,7 @@ const isLegal = (startStack, endStack) => {
 const checkForWin = () => {
   // Your code here
   if (stacks.c == [4, 3, 2, 1]) {
-    console.log("You Won");
+    return true;
   } else {
     return false;
   }
@@ -115,9 +117,12 @@ const towersOfHanoi = (startStack, endStack) => {
 
   isLegal(startStack, endStack)
 
-  // if (isLegal(startStack, endStack)) {
-  //   movePiece(startStack, endStack);
-  // }
+  if (isLegal(startStack, endStack)) {
+    movePiece(startStack, endStack);
+  } else {
+    return "cannot make this move"
+  }
+  checkForWin(startStack, endStack)
   // movePiece(firstMove, secondMove);
   // movePiece(startStack, endStack)
   // checkForWin()
